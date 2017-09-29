@@ -16,9 +16,15 @@ class StartEnd:
 class ImageManipulation:
 
     def __init__(self,passImage):
-        img = Image.open(passImage)
-        self.weight, self.height = img.size
-        self.pixObj = img.load()
+        self.img = Image.open(passImage)
+        self.weight, self.height = self.img.size
+        self.pixObj = self.img.load()
+
+    def getImg(self):
+        return self.img
+
+    def getPixelObj(self):
+        return self.pixObj
 
     def getImageBound(self):
         temp1 = Pixel(0, 0, None)
@@ -35,9 +41,6 @@ class ImageManipulation:
 
         return temp
     #find maze from image
-
-    def getImg(self):
-        return img
 
 
     def getTerminatingPoints(self):
