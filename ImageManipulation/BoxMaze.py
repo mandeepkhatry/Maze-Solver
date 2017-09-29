@@ -12,15 +12,33 @@ class StartEnd:
         self.start = s
         self.end = e
 
-class ImageManipulation:
 
+class ImageManipulation:
 
     def __init__(self,passImage):
         img = Image.open(passImage)
         self.weight, self.height = img.size
         self.pixObj = img.load()
 
+    def getImageBound(self):
+        temp1 = Pixel(0, 0, None)
+        temp2 = Pixel(0, 0, None)
+
+        for j in range(self.height):
+            for i in range(self.weight):
+                if self.pixObj[i, j] == (0, 0, 0, 255):
+                    if (temp1.x == 0 and temp1.y == 0 and temp1.p == None):
+                        temp1.x, temp1.y, temp1.p = i, j, None
+                    temp2.x, temp2.y, temp2.p = i, j, None
+
+        temp = [temp1,temp2]
+
+        return temp
     #find maze from image
+
+    def getImg(self):
+        return img
+
 
     def getTerminatingPoints(self):
 
@@ -48,10 +66,5 @@ class ImageManipulation:
         terminatingPoints = StartEnd(s,e)
 
         return terminatingPoints
-
-
-#s = ImageManipulation("Maze.png")
-
-#print(s.getTerminatingPoints().end.y)
 
 

@@ -1,9 +1,27 @@
 from Graph.Graph import Graph
+from ImageManipulation.BoxMaze import ImageManipulation
+from PIL import Image
+from Graph.Node import Node
+from ImageManipulation.Crash import Crash
 
-g = Graph()
+#s = ImageManipulation("Maze.png")
 
-g.addEdge('a','b', 10)
+#print(s.getTerminatingPoints().end.y)
 
-g.addEdge('c',' a',20)
+maze = "Maze.png"
 
-g.result()
+s = ImageManipulation(maze)
+
+start_obj = s.getTerminatingPoints().start
+
+end_obj = s.getTerminatingPoints().end
+
+
+visted_nodes = []
+
+queue = []
+queue.append(start_obj)
+
+print(start_obj.p)
+
+
