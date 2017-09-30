@@ -1,3 +1,4 @@
+from Graph.Graph import loadGraph
 from Graph.Graph import Graph
 from ImageManipulation.BoxMaze import ImageManipulation
 from PIL import Image
@@ -6,9 +7,23 @@ from ImageManipulation.Crash import Crash
 from ImageManipulation.BoxMaze import Pixel
 from ImageManipulation.Solution import getSolution
 
+
+#simple = {'a' :['c','b'],
+          'b': ['a','c']}
+
+
+#g = loadGraph(simple)
+
+#g.result()
+
+
+
 #s = ImageManipulation("Maze.png")
 
 #print(s.getTerminatingPoints().end.y)
+
+
+
 
 maze = "Maze.png"
 

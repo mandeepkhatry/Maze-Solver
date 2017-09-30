@@ -39,3 +39,14 @@ class Graph:
 
 
 
+def loadGraph(graph):
+    g = Graph()
+    for v in graph:
+        l = graph[v]
+        for i in l:
+            g.addEdge(v,i)
+
+    return g
+
+
+
