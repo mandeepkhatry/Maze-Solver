@@ -15,6 +15,13 @@ class Graph:
 
         #Visited vertices( from_v nodes)  to check for repeated starting vertex
         self.visitedVertices = []
+    def getVertices(self):
+        v = []
+        for vertexObj in self.vertices:
+            v.append(vertexObj.id)
+            for eachAdj in vertexObj.adjacent:
+                v.append(eachAdj[0])
+        return list(set(v))
 
     def addEdge(self,from_v,to_v,weight=0):
 
@@ -31,11 +38,38 @@ class Graph:
             newVertex.addAdjacent(to_v,weight)
             self.vertices.append(newVertex)
 
+    def isEdge(self,from_v,to_v):
+        v = []
+        for vertexObj in self.vertices:
+            v.append(vertexObj.id)
+            for eachAdj in vertexObj.adjacent:
+                v.append(eachAdj[0])
+        v = list(set(v))
+
+        if from_v not in v:
+            return False
+        else:
+            if from_v not in [eachVertexArray.id for eachVertexArray in self.vertices]:
+                return  False
+            else:
+                for i in self.vertices:
+                    if i.id == from_v:
+                        vertexObj_from_v = i
+
+                if to_v in [x[0] for x in vertexObj_from_v.adjacent]:
+                    return True
+                else:
+                    return False
+
+
+
+
+
+
     def result(self):
         for from_v in self.vertices:
             for i in range(len(from_v.adjacent)):
                 print("Weight of edge from " + from_v.id + " to "+ from_v.adjacent[i][0] + " is " + str(from_v.adjacent[i][1]))
-
 
 
 

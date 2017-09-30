@@ -9,21 +9,17 @@ from ImageManipulation.Solution import getSolution
 
 
 #simple = {'a' :['c','b'],
-          'b': ['a','c']}
+#             'b': ['a','c']}
 
 
 #g = loadGraph(simple)
 
-#g.result()
-
+#print(g.isEdge('b','c'))
 
 
 #s = ImageManipulation("Maze.png")
 
 #print(s.getTerminatingPoints().end.y)
-
-
-
 
 maze = "Maze.png"
 
@@ -91,7 +87,6 @@ while len(queue)>0:
 
 
 while final_destination:
-
     pix[final_destination.x, final_destination.y] = (150, 0, 50, 100)
     final_destination = final_destination.p
 
