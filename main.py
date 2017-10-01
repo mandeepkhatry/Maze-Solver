@@ -6,13 +6,20 @@ from Graph.Node import Node
 from ImageManipulation.Crash import Crash
 from ImageManipulation.BoxMaze import Pixel
 from ImageManipulation.Solution import getSolution
+from Graph.DepthFirst import DFT
 
 
-#simple = {'a' :['c','b'],
-#             'b': ['a','c']}
-
+#simple = {'a' :['b'],
+#             'b': ['a','c','d'],
+ #               'c':['b','e'],
+  #                  'd':['b','e'],
+   #                     'e':['c','d']}
 
 #g = loadGraph(simple)
+
+#dfs = DFT(g,'a')
+
+#print(dfs.visitTo('e'))
 
 #print(g.isEdge('b','c'))
 

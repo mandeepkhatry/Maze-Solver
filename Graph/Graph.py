@@ -62,10 +62,6 @@ class Graph:
                     return False
 
 
-
-
-
-
     def result(self):
         for from_v in self.vertices:
             for i in range(len(from_v.adjacent)):
@@ -81,6 +77,4 @@ def loadGraph(graph):
             g.addEdge(v,i)
 
     return g
-
-
 
