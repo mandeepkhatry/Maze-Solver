@@ -6,7 +6,6 @@ Clone the repo, rename your maze image as "maze.png" and run main.py.
 
 Solved maze is saved as "MazeSolved.png".
 
-However, maze generation is still in progress.
 
 <h3>Dependencies</h3>
 
